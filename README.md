@@ -1,6 +1,40 @@
 # RabbitMQ for Docker and Kubernetes
 
+## Reference
+- https://hub.docker.com/_/rabbitmq
 
+## Docker deployment to the local workstation
+
+~~~
+# start the container
+docker run -d --name rabbitmq rabbitmq:3.7.15
+
+# see the status
+docker container ls
+
+# destroy the container
+docker container stop rabbitmq
+docker container rm rabbitmq
+~~~
+
+
+## Kubernetes deployment to the local workstation (macOS only)
+
+## Prep your local workstation (macOS only)
+1. Clone this repo and work in it's root directory
+1. Install Docker Desktop for Mac (https://www.docker.com/products/docker-desktop)
+1. In Docker Desktop > Preferences > Kubernetes, check 'Enable Kubernetes'
+1. Click on the Docker item in the Menu Bar. Mouse to the 'Kubernetes' menu item and ensure that 'docker-for-desktop' is selected.
+
+Deploy (run these commands from the root folder of this repo)
+~~~
+kubectl apply -f ./kubernetes/rabbitmq.yaml
+~~~
+
+Delete
+~~~
+kubectl delete -f ./kubernetes/rabbitmq.yaml
+~~~
 
 
 

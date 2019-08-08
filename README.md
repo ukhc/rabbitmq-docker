@@ -28,12 +28,12 @@ docker container rm rabbitmq
 
 Deploy (run these commands from the root folder of this repo)
 ~~~
-kubectl apply -f ./kubernetes/rabbitmq.yaml
+kubectl apply -f ./kubernetes/rabbitmq-cluster.yaml
 ~~~
 
 Delete
 ~~~
-kubectl delete -f ./kubernetes/rabbitmq.yaml
+kubectl delete -f ./kubernetes/rabbitmq-cluster.yaml
 ~~~
 
 
